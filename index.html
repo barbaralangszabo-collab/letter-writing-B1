@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Letter writing B1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#f2ece0;   
+  --ink:#1a1a1a;     
+  --gold:#c5a059;    
+  --soft:#e4dccb;    
+  --border:#d4c8b0;
+  --accent:#4a3b22;  
+  --card-bg:#f9f6f0;
+  --danger:#a32a2a;
+  --success:#2d5a27;
+}
+*{box-sizing:border-box;}
+body{font-family:Inter,sans-serif;background:var(--paper);margin:0;color:var(--ink);}
+
+.hero{max-width:1450px;margin:0 auto;padding:0 20px; text-align: center;}
+.hero img{width:100%; max-height:350px; object-fit:contain; border-radius:12px;}
+
+.title-container {
+    max-width: 500px;
+    margin: 10px auto 20px;
+    background: var(--ink);
+    color: var(--gold);
+    padding: 15px 30px;
+    border-radius: 4px;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
+}
+.title-container h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+main{max-width:1650px;margin:20px auto 40px;padding:0 20px;display:grid;grid-template-columns:320px 1fr 300px;gap:24px;}
+@media(max-width:1200px){main{grid-template-columns:1fr;}}
+
+.card{background:var(--card-bg);border-radius:12px;padding:20px;border:1px solid var(--border);box-shadow:0 4px 15px rgba(0,0,0,0.05);margin-bottom:20px;overflow:hidden;}
+.aim-card { border-left: 5px solid var(--ink); background: #eee8db; }
+h2{margin-top:0;color:var(--accent);font-size:0.9rem;border-bottom:1px solid var(--border);padding-bottom:8px;text-transform:uppercase;letter-spacing:1.5px;}
+
+details{margin-bottom:12px;background:white;border-radius:8px;border:1px solid var(--border);}
+summary{padding:14px;font-weight:700;cursor:pointer;background:var(--soft); font-size: 1.1rem;}
+details ul{padding:12px 18px;font-size:1rem;line-height:1.6; list-style-type: '→ ';}
+
+#styleSelect, #taskSelect {
+    width:100%;
+    padding:15px;
+    font-size:1.1rem;
+    font-weight:600;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background: white;
+}
+.config-bar{display:grid;grid-template-columns:1fr 1fr;gap:16px; margin-bottom: 20px;}
+
+.task-display-area{background:#fffdf9;border-left:4px solid var(--gold);padding:18px;border-radius:8px;line-height:1.7;font-size:1.1rem;white-space:pre-wrap;}
+.task-display-area b { color: var(--accent); }
+
+textarea{width:100%;min-height:650px;padding:35px;font-size:1.2rem;font-family:Georgia,serif;line-height:1.8;border-radius:8px;border:1px solid var(--border);resize:vertical; background: #fff; transition: 0.3s; outline: none;}
+
+.glow-active { box-shadow: 0 0 25px rgba(197, 160, 89, 0.6); border-color: var(--gold); }
+
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;font-size:0.9rem;}
+.time-box{background:var(--ink);color:white;padding:6px 14px;border-radius:4px;font-weight:700;font-family:monospace;}
+.word-box{font-weight:700;color:var(--ink);display:flex;gap:10px;align-items:center;}
+.count-perfect { color: #856404; background: #fff3cd; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--gold); } 
+.count-over { color: #721c24; background: #f8d7da; padding: 2px 8px; border-radius: 4px; } 
+
+.btn-action{background:var(--ink);color:var(--gold);border:1px solid var(--gold);padding:10px 20px;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.85rem;transition: 0.3s;}
+.btn-action:hover{background:var(--gold);color:var(--ink);}
+.btn-save{background:var(--gold); color:var(--ink); border: none;}
+.btn-clear{background:transparent; color:var(--danger); border: 1px solid var(--danger);}
+.btn-clear:hover{background:var(--danger); color:white;}
+
+.phrase-chip{padding:12px;margin:8px 0;background:white;border-left:4px solid var(--gold);cursor:pointer;font-size:1rem;border-radius:4px; transition: 0.2s; user-select: none;}
+.phrase-chip:hover{background: var(--soft); transform: translateX(5px);}
+
+.encouragement-area {
+    text-align: center;
+    padding: 30px 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+.checklist-item input {
+    accent-color: var(--success);
+    width: 18px;
+    height: 18px;
+}
+
+footer{text-align:center;font-size:0.8rem;color:var(--accent);opacity:0.6;margin:20px 0 30px;}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <img src="letter.png" alt="Elegant fountain pen writing on parchment">
+</section>
+
+<div class="title-container">
+    <h1>Letter writing B1</h1>
+</div>
+
+<main>
+<aside>
+<div class="card aim-card">
+<h2>Core Objectives</h2>
+<div style="padding: 10px; font-size: 1rem; line-height: 1.5;">
+This studio helps students practise writing letters and emails at <b>B1</b> level. The aim is to build confidence with everyday vocabulary, simple linking words, and the right tone for formal and informal messages.
+</div>
+<details style="margin-top: 15px;">
+<summary style="font-size: 0.95rem; padding: 10px; background: var(--border);">Operating Guide</summary>
+<ul style="padding: 12px 18px; font-size: 0.9rem; line-height: 1.5; margin: 0; background: white; list-style-type: decimal;">
+<li><b>Select Register:</b> Choose between Formal or Informal modes to update the task list and phrase bank.</li>
+<li><b>Choose Task:</b> Pick a scenario from the dropdown to display the writing prompt.</li>
+<li><b>Use Phrases:</b> Click any phrase in the bank on the right; it will be added exactly where your cursor is.</li>
+<li><b>Watch the Word Count:</b> Keep an eye on the live word count (Target: 100–150) and the built-in timer.</li>
+<li><b>Final Check:</b> Complete the checklist before downloading your work as a .txt file.</li>
+</ul>
+</details>
+</div>
+
+<div class="card">
+<h2>B1 Key Points</h2>
+<details open>
+<summary>Formal Letters</summary>
+<ul>
+<li>Say why you are writing in the first paragraph</li>
+<li>Use a <b>Formal</b> style (avoid contractions)</li>
+<li>Keep a polite, respectful tone</li>
+<li>Organise ideas into short, clear paragraphs</li>
+<li>Use a suitable ending (Yours sincerely/faithfully)</li>
+</ul>
+</details>
+
+<details>
+<summary>Informal Letters</summary>
+<ul>
+<li>Start in a friendly, natural way</li>
+<li>Use an <b>Informal</b> style (contractions are fine)</li>
+<li>Write as if you are speaking to a friend</li>
+<li>Use everyday words and simple linking words</li>
+<li>Finish with a warm, friendly closing</li>
+</ul>
+</details>
+</div>
+
+<div class="card" id="checklistCard">
+<h2>Review Checklist</h2>
+<div style="padding: 5px;">
+    <label class="checklist-item"><input type="checkbox" class="review-check"> Correct style kept throughout?</label>
+    <label class="checklist-item"><input type="checkbox" class="review-check"> Word count (100-150)?</label>
+    <label class="checklist-item"><input type="checkbox" class="review-check"> Some linking words used?</label>
+    <label class="checklist-item"><input type="checkbox" class="review-check"> No spelling or basic grammar mistakes?</label>
+    <label class="checklist-item"><input type="checkbox" class="review-check"> Suitable opening/closing used?</label>
+</div>
+</div>
+</aside>
+
+<div>
+<div class="card">
+<h2>Select the register</h2>
+<div class="config-bar">
+<select id="styleSelect" onchange="loadUI()">
+<option value="formal">Formal</option>
+<option value="informal">Informal</option>
+</select>
+<select id="taskSelect" onchange="updateTask()"></select>
+</div>
+
+<h2>Writing Task</h2>
+<div id="taskBox" class="task-display-area"></div>
+</div>
+
+<div class="card">
+<div class="controls">
+<div>
+<span class="time-box" id="time">00:00</span>
+<button class="btn-action" onclick="toggleTimer()" id="timerBtn">START</button>
+<button class="btn-action" onclick="resetTimer()">RESET</button>
+</div>
+<div class="word-box">
+Words: <span id="wordCount">0</span>
+<button class="btn-action btn-clear" onclick="clearEditor()">CLEAR TEXT</button>
+<button class="btn-action btn-save" onclick="downloadFile()">DOWNLOAD TXT</button>
+</div>
+</div>
+<textarea id="editor" oninput="updateWordCount()" placeholder="Start writing your letter..."></textarea>
+</div>
+
+<div class="encouragement-area">
+    "Clear, simple words are often the strongest."
+</div>
+
+</div>
+
+<aside>
+<div class="card">
+<h2>B1 Phrase Bank</h2>
+<div id="phraseCategories"></div>
+</div>
+</aside>
+</main>
+
+<script>
+/* Task and Phrase data updated for B1 level, British English */
+const tasks = {
+formal: [
+["1. Job Application",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You saw an advert for a part-time job at a local café. They want someone who is friendly and hard-working.\n\n<b>Task:</b> Write a letter to the manager. Say why you want the job, what experience you have, and when you can start.`],
+["2. Complaint",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You booked a table at a restaurant for a birthday meal, but the service was very slow and one of the dishes was cold.\n\n<b>Task:</b> Write a letter to the restaurant manager. Explain what happened and say what you would like them to do about it.`],
+["3. To the Editor",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> Your local newspaper printed an article saying that teenagers in your town are not interested in helping the community.\n\n<b>Task:</b> Write a letter to the editor. Say why you disagree and give an example of young people helping in your area.`],
+["4. Reference",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> A friend from your part-time job is applying for a new job and has asked you to write a reference.\n\n<b>Task:</b> Write a letter describing your friend's good qualities, how well they work, and why they would be good at the new job.`],
+["5. Product Problem",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You bought a pair of headphones online, but they stopped working after one week. Customer service has not replied to your emails.\n\n<b>Task:</b> Write a letter to the company. Explain the problem and say what you want them to do (repair, replace, or refund).`],
+["6. Asking for Information",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You run a small school football club that needs new equipment. A local charity gives money to help sports clubs.\n\n<b>Task:</b> Write a letter to the charity. Ask how to apply for help and explain why your club needs the money.`],
+["7. Resignation",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You are leaving your part-time job because you are starting college. You want to leave on good terms.\n\n<b>Task:</b> Write a letter to your manager. Say when your last day will be, thank them for the opportunity, and offer to help train someone new.`],
+["8. Apology",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> Your company was late delivering flowers for a friend's wedding, and this caused problems on the day.\n\n<b>Task:</b> Write a letter of apology to the customer. Explain what went wrong and offer something to make up for it, such as a discount.`],
+["9. Invitation to a Speaker",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> Your school is organising a careers day and wants a local business owner to come and talk to students.\n\n<b>Task:</b> Write a formal invitation. Explain what the event is about, why their visit would be helpful for students, and give the date and time.`],
+["10. Save the Park",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> The town council wants to build a car park where a popular local park is now.\n\n<b>Task:</b> Write a letter to the council. Explain why the park is important to the community and suggest another place for the car park.`]
+],
+informal: [
+["1. Advice for a Friend",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> Your friend Mark is moving to your town next month for a new job. He is a bit nervous about making friends.\n\n<b>Task:</b> Write an email to Mark. Give him some tips about the area, suggest a club he could join, and offer to help him move in.`],
+["2. Travel Tips",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> Your cousin is going to visit a country you went to last year. They want to know about quieter, less touristy places.\n\n<b>Task:</b> Write a letter recommending one or two places to visit. Say why they are special and what food your cousin should try.`],
+["3. Catching Up",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You have not spoken to your best friend for six months because you have been travelling.\n\n<b>Task:</b> Write an email telling them about your trip. Describe one exciting or difficult moment and ask how things are going at home.`],
+["4. Thank You",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You stayed with a school friend's family in the countryside and had a really good time.\n\n<b>Task:</b> Write a letter thanking them for having you. Mention your favourite part of the stay and invite your friend to visit you.`],
+["5. Explaining a Mistake",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You borrowed your friend's bike, and it got damaged while you were using it.\n\n<b>Task:</b> Write an email explaining what happened. Say sorry, offer to pay for the repair, and suggest meeting soon to talk about it.`],
+["6. Encouraging a Hobby",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> Your younger brother wants to stop his guitar lessons because he thinks they are too hard.\n\n<b>Task:</b> Write a letter encouraging him to keep going. Talk about something you found difficult, and suggest a way to make practising more fun.`],
+["7. Birthday Surprise",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You are planning a surprise party for a friend's 18th birthday.\n\n<b>Task:</b> Write an email to a group of friends. Explain the plan (date, place, theme), give people small jobs to do, and remind them to keep it a secret.`],
+["8. Good News",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> Your friend just texted you to say they passed their driving test on the first try.\n\n<b>Task:</b> Write a reply email. Say how happy you are for them, ask what car they might get, and suggest going out to celebrate.`],
+["9. Concert Review",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You and a friend went to a concert last weekend and had slightly different opinions about it.\n\n<b>Task:</b> Write an email about the evening. Say what you thought of the music, mention something funny that happened, and say you will send some photos.`],
+["10. Pet Sitting",`Write a letter in 100-150 words in an appropriate style.\n\n<b>The Scenario:</b> You have to go away for a week and need someone to look after your dog.\n\n<b>Task:</b> Write an email to a friend nearby. Explain the situation, give a few details about the dog's routine, and offer to do something nice for them in return.`]
+]
+};
+
+const phrases = {
+formal:{
+"Starting the Letter":["I am writing to...","I am writing about...","I am writing because...","I recently...","I would like to tell you about...","I am contacting you regarding..."],
+"Linking Ideas":["Firstly,","Also,","In addition,","However,","Because of this,","Finally,"],
+"Explaining a Problem":["This has caused a problem because...","As a result of this,...","Unfortunately,...","This meant that...","I was not happy about...","This has been very inconvenient."],
+"Making a Request":["I would be grateful if you could...","I would like to suggest that...","Could you please...","I think it would be a good idea to...","I hope you can help with this.","I would appreciate a quick reply."],
+"Formal Closings":["I look forward to hearing from you.","Thank you for taking the time to read this.","Please contact me if you need more information.","I hope to hear from you soon.","Yours sincerely,","Yours faithfully,"]
+},
+informal:{
+"Friendly Openings":["Just a quick message to say...","It's been a while since we last spoke!","I hope you're doing well.","Sorry it's taken me so long to write.","You'll never guess what happened...","Guess what!"],
+"Changing Topic":["Anyway,","By the way,","Also,","That reminds me,","Before I forget,","So,"],
+"Giving Advice":["If I were you, I'd...","Why don't you...?","You could try...","Maybe you should...","I'd really recommend...","Don't forget to..."],
+"Sharing Feelings":["I was so happy when...","I was really sad to hear...","I couldn't believe it when...","I'm really excited about...","I felt so relieved when...","It made me really happy that..."],
+"Warm Closings":["Take care!","Lots of love,","All the best,","Write back soon.","See you soon!","Speak soon!"]
+}
+};
+
+let seconds=0,timer=null;
+const styleSelect = document.getElementById('styleSelect');
+const taskSelect = document.getElementById('taskSelect');
+const phraseCategories = document.getElementById('phraseCategories');
+const taskBox = document.getElementById('taskBox');
+const editor = document.getElementById('editor');
+const wordCount = document.getElementById('wordCount');
+const timerBtn = document.getElementById('timerBtn');
+const time = document.getElementById('time');
+
+function toggleTimer(){timer?(clearInterval(timer),timer=null,timerBtn.textContent="START"):(timer=setInterval(()=>{seconds++;renderTime();},1000),timerBtn.textContent="STOP");}
+function resetTimer(){timer&&clearInterval(timer);timer=null;seconds=0;renderTime();timerBtn.textContent="START";}
+function renderTime(){time.textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");}
+
+function loadUI(){
+  const style=styleSelect.value;
+  taskSelect.innerHTML=tasks[style].map((t,i)=>`<option value="${i}">${t[0]}</option>`).join("");
+  phraseCategories.innerHTML="";
+  for(const cat in phrases[style]){
+    const d=document.createElement("details");
+    d.innerHTML=`<summary>${cat}</summary>`+
+      phrases[style][cat].map(p=>`<div class="phrase-chip" onmousedown="insertText('${p.replace(/'/g, "\\'")}')">${p}</div>`).join("");
+    phraseCategories.appendChild(d);
+  }
+  const checks = document.querySelectorAll('.review-check');
+  checks.forEach(c => c.checked = false);
+  updateTask();
+}
+
+function updateTask(){taskBox.innerHTML=tasks[styleSelect.value][taskSelect.value][1];}
+
+function insertText(t) {
+    const start = editor.selectionStart;
+    const end = editor.selectionEnd;
+    const text = editor.value;
+    editor.value = text.substring(0, start) + t + " " + text.substring(end);
+    const newPos = start + t.length + 1;
+    editor.setSelectionRange(newPos, newPos);
+    editor.focus();
+    editor.classList.add('glow-active');
+    setTimeout(() => editor.classList.remove('glow-active'), 600);
+    updateWordCount();
+}
+
+function updateWordCount(){
+    const count = editor.value.trim().split(/\s+/).filter(Boolean).length;
+    wordCount.textContent = count;
+    wordCount.className = "";
+    if (count >= 100 && count <= 150) wordCount.classList.add("count-perfect");
+    else if (count > 150) wordCount.classList.add("count-over");
+}
+
+function clearEditor(){
+    if(confirm("Are you sure you want to clear all text? This cannot be undone.")){
+        editor.value = "";
+        updateWordCount();
+    }
+}
+
+function downloadFile(){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([editor.value],{type:"text/plain"}));a.download="B1_Letter_Writing.txt";a.click();}
+
+loadUI();
+renderTime();
+</script>
+
+<footer>© 2026 Letter Writing Studio. All rights reserved.</footer>
+</body>
+</html>
